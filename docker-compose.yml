@@ -5,10 +5,10 @@ services:
   database:
     image: postgres:${POSTGRES_VERSION:-14}-alpine
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-galien_local}
+      POSTGRES_DB: ${POSTGRES_DB:-chiron_local}
       # You should definitely change the password in production
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-If1JSl73p9aT}
-      POSTGRES_USER: ${POSTGRES_USER:-galien_user}
+      POSTGRES_USER: ${POSTGRES_USER:-chiron_user}
     volumes:
       - db-data:/var/lib/postgresql/data:rw
       # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
@@ -22,7 +22,7 @@ volumes:
   db-data:
 ###< doctrine/doctrine-bundle ###
 
-#DATABASE_URL="postgresql://galien_user:If1JSl73p9aT@postgres_database_1:5432/galien_local?serverVersion=14&charset=utf8"
+#DATABASE_URL="postgresql://chiron_user:If1JSl73p9aT@postgres_database_1:5432/chiron_local?serverVersion=14&charset=utf8"
 networks:
   default:
     external:
